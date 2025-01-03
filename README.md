@@ -58,3 +58,7 @@
     Copiar código
     docker-compose up --build
 4. Access the API documentation at: http://localhost:8000/docs
+
+
+## Example Image
+![Example Image](assets/EERR_V1.png)
