@@ -47,7 +47,7 @@ class ReviewResponseSchema(Schema):
                                 metadata={"description": "Recomendación de la revisión"})
 
     # Optional observations for the review
-    obs = fields.Boolean(attribute="rev_obs", dump_only=True,
+    obs = fields.Str(attribute="rev_obs", dump_only=True,
                          metadata={"description": "Observaciones de la revisión - OPCIONAL"})
 
     # Creation date of the review, dumped only
