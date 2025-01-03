@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mapmyworld_app
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/mapmyworld
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    container_name: mapmyworld_db
+    ports:
+      - "5432:5432"  # Exponer el puerto para acceso externo
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mapmyworld
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    command: >
+      postgres -c listen_addresses='*'
+
+volumes:
+  postgres_data:
