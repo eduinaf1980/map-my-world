@@ -47,16 +47,14 @@
    git clone https://github.com/eduinaf1980/map-my-world.git
    cd map-my-world
 2. Set up the environment:
-  ```bash
+   ```bash
     Create a .env file with the following variables:
     env
     Copiar código
     DATABASE_URL=postgres://<username>:<password>@<host>:<port>/<database>
     ENVIRONMENT=development
-
 3. Build and run the Docker containers:
-  ```bash
+   ```bash
     Copiar código
     docker-compose up --build
-
 4. Access the API documentation at: http://localhost:8000/docs
