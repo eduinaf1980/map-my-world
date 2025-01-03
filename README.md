@@ -60,5 +60,8 @@
 4. Access the API documentation at: http://localhost:8000/docs
 
 
-## Example Image
+## Entity-Relationship Diagram
 ![Example Image](assets/EERR_V1.png)
+
+## Data Dictionary
+![Example Image](assets/Ddata_V1.png)
