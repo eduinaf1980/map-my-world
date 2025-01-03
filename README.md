@@ -52,7 +52,7 @@
     env
     Copiar código
     DATABASE_URL=postgres://postgres:postgres@localhost:5432/mapmyworld
-    ENVIRONMENT=development
+    ENVIRONMENT=production
 3. Build and run the Docker containers:
    ```bash
     Copiar código
