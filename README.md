@@ -51,7 +51,7 @@
     Create a .env file with the following variables:
     env
     Copiar código
-    DATABASE_URL=postgres://<username>:<password>@<host>:<port>/<database>
+    DATABASE_URL=postgres://postgres:postgres@localhost:5432/mapmyworld
     ENVIRONMENT=development
 3. Build and run the Docker containers:
    ```bash
