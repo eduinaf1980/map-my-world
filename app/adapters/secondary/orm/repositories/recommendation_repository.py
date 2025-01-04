@@ -70,5 +70,8 @@ class RecommendationRepository(RecommendationRepositoryPort):
                         review_date=None
                     ))
 
+        # Ordenar las recomendaciones por 'bandera' en orden ascendente (1 primero)
+        recommendations = sorted(recommendations, key=lambda r: r.bandera)
+
         # Return only the top 10 recommendations
-        return recommendations[:10]  # We return only the first 10 recommendations
+        return recommendations[:100]  # We return only the first 10 recommendations
