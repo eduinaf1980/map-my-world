@@ -1,0 +1,41 @@
+WITH latest_reviews AS (
+    -- Obtener la última revisión de cada combinación que esté vencida
+    SELECT
+        rev_fk_loc_uuid_id,
+        rev_fk_cat_uuid_id,
+        MAX(rev_created) AS latest_rev_created
+    FROM
+        review
+    WHERE
+        rev_created < NOW() - INTERVAL '30 days'  -- Solo revisiones vencidas
+    GROUP BY
+        rev_fk_loc_uuid_id, rev_fk_cat_uuid_id
+)
+SELECT
+    loc.loc_uuid,
+    loc.loc_description,
+    cat.cat_uuid,
+    cat.cat_description,
+    CASE
+        WHEN rev.rev_uuid IS NULL THEN 1  -- No está en Review (nunca revisada)
+        WHEN rev.rev_created < NOW() - INTERVAL '30 days' THEN 2  -- Revisión más antigua de 30 días
+        ELSE 0  -- Combinación ya revisada y reciente (opcional si necesitas otro caso)
+    END AS bandera,
+    rev.rev_created AS review_date  -- Fecha de la última revisión
+FROM
+    location loc
+CROSS JOIN
+    category cat
+LEFT JOIN
+    latest_reviews lr
+    ON lr.rev_fk_loc_uuid_id = loc.loc_uuid AND lr.rev_fk_cat_uuid_id = cat.cat_uuid
+LEFT JOIN
+    review rev
+    ON rev.rev_fk_loc_uuid_id = loc.loc_uuid
+    AND rev.rev_fk_cat_uuid_id = cat.cat_uuid
+    AND rev.rev_created = lr.latest_rev_created  -- Solo la revisión más reciente
+WHERE
+    (rev.rev_uuid IS NULL OR rev.rev_created < NOW() - INTERVAL '30 days')  -- Solo las combinaciones no revisadas o con revisión vencida
+ORDER BY
+    bandera, rev.rev_created DESC  -- Primero las no revisadas, luego las vencidas ordenadas por fecha
+LIMIT 100;  -- Limitar a 10 combinaciones
