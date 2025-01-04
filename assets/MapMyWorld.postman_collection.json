@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "e0d9ee27-c1c5-4ba0-8826-ff66c7a1853d",
+		"name": "MapMyWorld",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13262804"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8000/recommendations",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "hOcsQELYIuAlFSqtHwIUM6JAcY9swXLtoYzYJYz1cTbbiuxGA4GXINZIX0EkmNsxVkwERQiAT0Zr2PQTTT8ZTjIqLAXfMhqxTynqxLpGMxzWaeEzZBRzgAd5JTrQUPpfa8CjYUHViIZspXexDAryAVUqIFJI4VThfCTVLZJRwXFpDjxsqNyLadxXl1BNTGZGhkXKd9iep70nY3rCQTZK1Yxhdjyu0VIUXRvwwrNoF6vTLfg0RXhTaetZOjg12K1iiWVMFUGncVDb6cr8jvxkMuIn7NOXDeuMEKbuSbaYnAFK",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/recommendations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"recommendations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/reviews/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "hOcsQELYIuAlFSqtHwIUM6JAcY9swXLtoYzYJYz1cTbbiuxGA4GXINZIX0EkmNsxVkwERQiAT0Zr2PQTTT8ZTjIqLAXfMhqxTynqxLpGMxzWaeEzZBRzgAd5JTrQUPpfa8CjYUHViIZspXexDAryAVUqIFJI4VThfCTVLZJRwXFpDjxsqNyLadxXl1BNTGZGhkXKd9iep70nY3rCQTZK1Yxhdjyu0VIUXRvwwrNoF6vTLfg0RXhTaetZOjg12K1iiWVMFUGncVDb6cr8jvxkMuIn7NOXDeuMEKbuSbaYnAFK",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"recommendation\": \"Esta es una recomendación\",\n    \"category\": \"97736c19-ec6f-4966-bb2f-f599d8790a91\",\n    \"location\": \"f799dacb-9b5a-4ecb-a7b5-4f2477561088\",\n    \"obs\": \"Hola que tal\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/reviews/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"reviews",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/categories/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "hOcsQELYIuAlFSqtHwIUM6JAcY9swXLtoYzYJYz1cTbbiuxGA4GXINZIX0EkmNsxVkwERQiAT0Zr2PQTTT8ZTjIqLAXfMhqxTynqxLpGMxzWaeEzZBRzgAd5JTrQUPpfa8CjYUHViIZspXexDAryAVUqIFJI4VThfCTVLZJRwXFpDjxsqNyLadxXl1BNTGZGhkXKd9iep70nY3rCQTZK1Yxhdjyu0VIUXRvwwrNoF6vTLfg0RXhTaetZOjg12K1iiWVMFUGncVDb6cr8jvxkMuIn7NOXDeuMEKbuSbaYnAFK",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"Categoría prueba\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/categories/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"categories",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/locations/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "hOcsQELYIuAlFSqtHwIUM6JAcY9swXLtoYzYJYz1cTbbiuxGA4GXINZIX0EkmNsxVkwERQiAT0Zr2PQTTT8ZTjIqLAXfMhqxTynqxLpGMxzWaeEzZBRzgAd5JTrQUPpfa8CjYUHViIZspXexDAryAVUqIFJI4VThfCTVLZJRwXFpDjxsqNyLadxXl1BNTGZGhkXKd9iep70nY3rCQTZK1Yxhdjyu0VIUXRvwwrNoF6vTLfg0RXhTaetZOjg12K1iiWVMFUGncVDb6cr8jvxkMuIn7NOXDeuMEKbuSbaYnAFK",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"Ubicacion prueba\",\n    \"lat\": -70.123456,\n    \"long\": -110.765432\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/locations/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"locations",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
