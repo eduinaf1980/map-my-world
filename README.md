@@ -50,11 +50,16 @@
    ```bash
     Create a .env file with the following variables:
     env
-    Copiar código
     DATABASE_URL=postgres://postgres:postgres@localhost:5432/mapmyworld
     ENVIRONMENT=production
 3. Build and run the Docker containers:
    ```bash
-    Copiar código
     docker-compose up --build
 4. Access the API documentation at: http://localhost:8000/docs
+
+
+## Entity-Relationship Diagram
+![Example Image](assets/EERR_V1.png)
+
+## Data Dictionary
+![Example Image](assets/Ddata_V1.png)
