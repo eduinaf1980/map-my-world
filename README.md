@@ -56,7 +56,7 @@
    ```bash
     docker-compose up --build
 4. Access the API documentation at: http://localhost:8000/docs
-5. Colección Postmann disponible en el proyecto
+5. Postman collection available in the project
    ```bash
    /assets/MapMyWorld.postman_collection.json
 
